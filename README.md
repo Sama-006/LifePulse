@@ -12,5 +12,8 @@ LifePulse is an intelligent health monitoring dashboard platform that leverages 
 ## Repository Structure
 This repository is organized to keep project materials well-structured and easy to navigate:
 1. Clone the Repository:
-  ```bash
+   ```bash
     git clone https://github.com/Sama-06/LifePulse.git
+
+2. Open the project folder.
+3. Explore the  folder for proposal and documentaion files.
