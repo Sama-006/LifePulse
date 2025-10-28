@@ -17,4 +17,7 @@ This repository is organized to keep project materials well-structured and easy 
 
 2. Open the project folder.
 3. Explore the `docs/` folder for proposal and documentaion files `LifePulse System Proposal.pdf`.
-
+4. Requirement Elicitation is documented in `REQUIREMENTS.md` file
+5. Use-Cases and Diagrams are in `USE_CASE.md` file
+6. Requirements validation is documented in `REQUIREMENTS_VALIDATION.md` file
+    
