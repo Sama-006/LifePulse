@@ -17,3 +17,4 @@ This repository is organized to keep project materials well-structured and easy 
 
 2. Open the project folder.
 3. Explore the `docs/` folder for proposal and documentaion files `LifePulse System Proposal.pdf`.
+
