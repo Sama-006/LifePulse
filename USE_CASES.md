@@ -176,6 +176,9 @@ action.
 ## 3. UML Diagrams
 #### Two UML diagrams are provided that shows the flow of the system
    1. Use Case Diagram
+      - ![Use Case Diagram](assets/use_case_diagram.png)
    2. Class Diagram
-##### The diagrams can be accessed in the `assets/` folder
+      - ![Class Diagram](assets/class_diagram.png)
+
+##### The diagrams can be accessed in the `assets/` folder as well
 
