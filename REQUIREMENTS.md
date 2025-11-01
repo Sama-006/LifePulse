@@ -13,7 +13,7 @@
       - Doctors highlighted the importance of timely alerts and AI-assisted analysis.  
 
  2. ***Brainstorming Sessions***
-    - Conducted with all team members to identify all possible features and system functions that aligns with the       user's needs.
+    - Conducted with all team members to identify all possible features and system functions that aligns with the user's needs.
     - **Summary of Findings:**
       - Integration of IoT devices for automated data collection.  
       - AI algorithms for anomaly detection and health predictions.  
@@ -21,12 +21,12 @@
       - Secure cloud storage and backup for all health data.  
       - Cross-platform accessibility (web and mobile).  
 
-
-
+<br><br>
+--------------------------------------------------------------------------------------------------------------
 ### 2. Raw Requirements List
 
 The following requirements were collected through team brainstorming sessions and interviews. They represent      the initial, unfiltered expectations and needs for the system.
-
+<br><br>
   - The system shall allow users to create and manage accounts securely.
   - The system shall allow role-based access for patients, doctors, and admins.
   - The system shall allow doctors to view their patients’ health data.
@@ -72,9 +72,9 @@ The following requirements were collected through team brainstorming sessions an
   - The system shall require authentication before granting access to the dashboard. 
   - The system shall validate user credentials securely and prevent unauthorized access.  
   - The system shall allow users to reset their password securely via email verification. 
+<br><br>
 
-
-
+------------------------------------------------------------------------------------------------------------
 ### 3. Classified Requirements
  - All requirements are classified according to:
    
@@ -85,7 +85,7 @@ The following requirements were collected through team brainstorming sessions an
    2. **Level**
     - System Requirements (SR): Technical details that explain how the system will meet users' requirements.
     - User Requirements (UR): Focuses on what users expect from the system, e.g. patients and doctors.
-
+<br><br>
    
  - Classified Requirements
     - Assigned IDs based on the requirement type:
@@ -93,7 +93,7 @@ The following requirements were collected through team brainstorming sessions an
       - FR-S = Functional Requirement (System)
       - NFR-U = Non-Functional Requirement (User)
       - NFR-S = Non-Functional Requirement (System)
-
+<br><br>
  
 ### User Functional/ System Functional Requirements
 | ID | Requirement Description |
@@ -126,7 +126,7 @@ The following requirements were collected through team brainstorming sessions an
 | FR-S-16 | Doctors can generate summary health reports. |
 | FR-S-17 | All alerts, readings, and actions are logged for auditing. |
 
-
+<br><br>
 
 ### User Non-Functional/ System Non-Functional Requirements
 | ID | Requirement Description |
@@ -149,12 +149,78 @@ The following requirements were collected through team brainstorming sessions an
 | NFR-S-10 | System supports scalability to accommodate additional users, data volume, and sensors. |
 
 
-
-
+<br><br>
+--------------------------------------------------------------------------------------------------------------
 ### 4. Structured Specification
 
+  - This section provides a detailed specification of three key/critical requirements that form the system: 
+    1. User Authentication and Role-Based Access
+    2. IoT Data Collection and Synchronization
+    3. AI-Based Health Analysis and Alert Generation
+  - These requirements were slected based on their criticla role in ensuring the system's functionality, reliability, and purpose.
 
+<br>
+
+| Field | Specification |
+|-------|---------------|
+| Requirement ID | FR-S-01 |
+| Function | User Authentication and Role-Based Access |
+| Description | Allows secure registration, login, and role-based access for Patients, Doctors, and Administrators. Ensures only authorized users can access specific data and system operation. |
+| Inputs | - User credentials (email and password) <br>- Selected role type (Patient, Doctor, and Admin)|
+| Source | User input via login/registration interface; verification from the user database. |
+| Output | - Authentication token <br>- Role-specific dashboard access |
+| Destination | User session manager and dashboard controller. |
+| Action | If login credentials are valid, the system verifies the assigned role, ggenerates an authentication token, and grants access to the corresponding dashboard view. Invalid login attempts are denied and recorded in the security log. |
+| Requires | Existing user record and stable network connection to the authentication service. |
+| Precondition | User must be registered, and the authentication service must be operational. |
+| Postcondition | A valid user session is established with access limited to role permissions. |
+| Side Effects | Failed logins increment a counter; accounts may be temporarily locked after repeated failed attempts.|
+
+<br><br>
+
+| Field | Specification |
+|-------|---------------|
+| Requirement ID | FR-S-04 |
+| Function | IoT Data Collection and Synchronization |
+| Description | Collects and synchronizes real-time health readings (e.g.,heart rate, oxygen level blood pressure) from connected IoT sensors and updates the user dashboard automatically. |
+| Inputs | - Health readings from IoT devices (numeric values) <br>- Device ID and timestamps|
+| Source | Paired IoT sensors |
+| Outputs | - Timestamped health data stored in the system database <br>- Real-time visualization on user dashboard |
+| Action | Sensor data is received and validated for accuracy, then stored in the cloud-based database. Once stored, the dashboard automatically updates to reflect the new readings. if the IoT device disconnects, the system retires synchronization and logs the event. |
+| Requires | Valid device pairing and an active internet connection. |
+| Precondition | User account is active, and the IoT devide in connected and authorized. |
+| Postcondition | All valid readings are recorded, time-stamped, and visible in the dashboard interface. |
+| Side Effects | Temporary delays may occur if the device loses connection; automatic or re-synchronization is performed when connection is restored. |
+
+
+<br><br>
+   
+| Field | Specification |
+|-------|---------------|
+| Requirement ID | FR-S-07 |
+| Function | AI-Based Health Analysis and Alert Generation |
+| Description | Analyzes collected health data using AI algorithms to detect abnormal readings or treds and automatically generates alerts and health recommendations for users and doctors. |
+| Inputs | - Real-time and historical health data <br>- Defined threshold levels for normal and abnormal conditions |
+| Source | Health data repository containing user sensor readings. |
+| Outputs | - Alert messages (critical, warning, normal) <br>- Health insight or recommendation report |
+| Destination | Notification module and user/doctor dashboards. |
+| Action | The AI module evaluates new readings, compares them with historical trends and safety thresholds, and determines if an alert is required. if an anomaly is detected, the system creates an alert, logs it, and notifies the affected user and doctor through configured channels (email, push notification, or SMS). |
+| Requires | Operational AI engine and access to recent health data. |
+| Precondition | Valid data must exist in the repository; AI analysis service must be active. |
+| Postcondition | Alert generated and recorded; notification successfully sent; dashboard displays recommended action or insight. |
+| Side Effects | Possible false-positive alerts due to data noise; flagged alerts are stored for later model evaluation and retraining. |
+
+
+<br><br>   
+--------------------------------------------------------------------------------------------------------------
 ### 5. Prioritized Requirements
+  - Requirements are categorized into three distinct levels of priority, each accompanied by a clearly articulated rationale:
+    - Mandatory (M)
+    - Nice to Have (N)
+    - Superfluous (S)
+
+<br>
+      
 | Requirement | Priority | Justification |
 |-------------|----------|--------|
 | User can create, manage, and delete accounts securely. | M | Core functionality; without user accounts, the system cannot operate. |
