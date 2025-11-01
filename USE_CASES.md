@@ -173,5 +173,9 @@ action.
       - Session timeout → Admin is logged out for security reasons.
 
 <br><br>
-## 3. Diagrams
+## 3. UML Diagrams
+#### Two UML diagrams are provided that shows the flow of the system
+   1. Use Case Diagram
+   2. Class Diagram
+##### The diagrams can be accessed in the `assets/` folder
 
