@@ -98,37 +98,55 @@ The following requirements were collected through team brainstorming sessions an
 ### User Functional/ System Functional Requirements
 | ID | Requirement Description |
 |------|--------------------------|
-| FR-U-01 | Allow doctors to view their patients' health data. |
-| FR-U-02 | Allow users to input personal and medical information. |
-| FR-U-03 | Visualize health data through graphs, charts, and indicators. |
-| FR-U-04 | Display real-time health readings on the dashboard. |
-| FR-U-05 | Allow users to view data over multiple time periods (daily, weekly, monthly). |
-| FR-U-06 | Enable doctors to generate summary health reports for their patient. |
-| FR-U-07 | Provide a user-friendly interface that is simple and accessible. |
-| FR-U-08 | Allow family members or caregivers to receive notifications if authorized by the user. |
-| FR-U-09 | Allow doctors to compare multiple patients' health data trends. |
-| FR-U-10 | User color indicators to represent safe or critical conditions. |
-| FR-U-11 | Include help or tutorial section to guide users. |
-| FR-S-01 | Allow users to create and manage accounts securely. |
+| FR-U-01 | Users can create and manage accounts securely. |
+| FR-U-02 | Users register using a valid email and password, with secure reset via email verification. |
+| FR-U-03 | Users can input personal and medical information. |
+| FR-U-04 | Users can enter health data manually if sensors are unavailable. |
+| FR-U-05 | Users can view data over multiple time periods (daily, weekly, monthly). |
+| FR-U-06 | Users can filter and compare their health data by date range or metric. |
+| FR-U-07 | Allow authorized family members or caregivers to receive notifications. |
+| FR-U-08 | Users can download or export their health reports. |
+| FR-U-09 | Users can submit feedback for improvements. |
+| FR-U-10 | Users can view AI generated health insights. |
+| FR-S-01 | Role-based access control enforces permissions for each user type. |
 | FR-S-02 | Support main roles: patient, doctor, and admin. |
-| FR-S-03 | Generate health insights or recommendations based on analyzed data. |
-| FR-S-04 | Notify users and doctors immediately when abnormal readings are detected. |
-| FR-S-05 | Keep a history of all health data for long-term tracking. |
-| FR-S-06 | Send alerts and notfications via email, SMS, or push notifications. |
-| FR-S-07 | Ensure only authorized doctors can access patient data. |
-| FR-S-08 | Ensure all data visualizations are updated automatically with every new reading. |
+| FR-S-03 | Administrators can manage users and update system configurations. |
+| FR-S-04 | Health data is collected from IoT sensors (heart rate, oxygen level, blood pressure). |
+| FR-S-05 | Automatic reconnection occurs if IoT devices lose connection. |
+| FR-S-06 | All readings are timestamped for traceability. |
+| FR-S-07 | AI algorithms analyze health data to detect anomalies. |
+| FR-S-08 | The system generates alerts and recommendations based on analysis results. |
+| FR-S-09 | Immediate notifications are sent to users and doctors when abnormal readings are detected. |
+| FR-S-10 | Alerts are delivered via email, SMS, or push notifications. |
+| FR-S-11 | Real-time health readings are displayed on the dashboard. |
+| FR-S-12 | Health data is visualized using color-coded graphs and charts to indicate safe and critical conditions. |
+| FR-S-13 | Historical data is stored for long-term monitoring. |
+| FR-S-14 | Doctors can compare multiple patients' data trends. |
+| FR-S-15 | System automatically refreshes dashboard data with each new reading. |
+| FR-S-16 | Doctors can generate summary health reports. |
+| FR-S-17 | All alerts, readings, and actions are logged for auditing. |
+
 
 
 ### User Non-Functional/ System Non-Functional Requirements
 | ID | Requirement Description |
 |------|--------------------------|
-| NFR-U-01 | Accessible through web browser and mobile devices. |
-| NFR-U-02 | Provide an intuitive and easy to navigate interface for users. |
+| NFR-U-01 | Interface is clear, intuitive, and simple to navigate. |
+| NFR-U-02 | Dashboard adapts responsively to both web and mobile platforms. |
+| NFR-U-03 | Includes help and tutorials sections for first-time users. |
+| NFR-U-04 | Accessibility options support users with visual or physical impairments. |
+| NFR-U-05 | Key tasks (view data, check alerts) should be completed in ≤3 steps. |
+| NFR-U-06 | Dashboard uses clear color codes to indicate safe vs critical health readings. |
 | NFR-S-01 | Encrypt all personal health data during storage and transmission. |
-| NFR-S-02 | Display real-time data updates with minimal delay (no more than 2 seconds). |
-| NFR-S-03 | Comply with health data privacy and security standards. |
-| NFR-S-04 | Automatically back up health data every 24 hours. |
-| NFR-S-05 | Ensure system uptime of at least 99% per month. |
+| NFR-S-02 | Display real-time data updates with minimal delay (within 5 seconds). |
+| NFR-S-03 | System complies with healthcare data privacy standards. |
+| NFR-S-04 | Automatically back up health data every 24 hours to prevent data loss. |
+| NFR-S-05 | Ensure system uptime of at least 99% during operation. |
+| NFR-S-06 | System remains responsive and can handle multiple users simultaneously. |
+| NFR-S-07 | Provides logs and notifications for system errors or device malfunctions. |
+| NFR-S-08 | Uses HTTPS protocol to secure all communications. |
+| NFR-S-09 | Only authorized doctors can access patient data. |
+| NFR-S-10 | System supports scalability to accommodate additional users, data volume, and sensors. |
 
 
 
@@ -137,18 +155,36 @@ The following requirements were collected through team brainstorming sessions an
 
 
 ### 5. Prioritized Requirements
-| Requirement | Priority | Reason |
+| Requirement | Priority | Justification |
 |-------------|----------|--------|
-| User can create, manage, and delete accounts securely. | M | Core functionaliy; without user accounts, the system cannot operate. |
-| Role-based access: Patient, Doctor, and Admin. | M | Essential for system security and differentiating functionalites. |
-| Authentication required before dashboard access. | M | Prevents unauthorized access; critical for privacy and security compliance. |
-| Only authorized doctors can access patient data. | M | Ensure patient privacy; required by health data regulations. |
-| Adminstrators can manage system configurations. | N | Helpful for maintainability and scalability but not critical at launch. |
-| collect health data from IoT sensors (heart rate, BP, oxygen level). | M | Core functionality; system depends on real-time data collection.|
-| Allow manual data input if sensors are unavailable. | M | Ensures system works for users without sensors; critical for usability. |
-| Timestamp all collected readings. | M | Necessary for accuracy and specification of tracked health data. |
-| REconnect automatically to IoT devices if disconnected. | N | Improves reliability but not critical for MVP. |
+| User can create, manage, and delete accounts securely. | M | Core functionality; without user accounts, the system cannot operate. |
+| Role-based access: Patient, Doctor, and Admin. | M | Essential for system security and role differentiation. |
+| Authentication required before dashboard access. | M | Prevents unauthorized access; critical for privacy and data protection. |
+| Only authorized doctors can access patient data. | M | Ensure patient confidentiality; required by healthcare privacy standards. |
+| Administrators can manage system configurations. | N | Useful for maintainability and scalability but not critical at launch. |
+| Collect health data from IoT sensors (heart rate, blood pressure, oxygen level). | M | Core functionality; system depends on real-time health data collection.|
+| Allow manual data input if sensors are unavailable. | M | Ensures accessibility for users without connected devices. |
+| Timestamp all collected readings. | M | Required for data accuracy and traceabiltiy. |
+| Reconnect automatically to IoT devices if disconnected. | N | Improves reliability; can be added after MVP. |
 | Store data securely in cloud-based database. | M | Core requirement for centralized monitoring and long-term tracking. |
 | Maintain historical health data. | M | Supports longitudinal analysis and reporting; key goal of the system. |
-| Log alerts, readings and user actions for auditing. | N | Helps in compliance and debugging; not immediately critical. |
-
+| Log alerts, readings and user actions for auditing. | N | Helps in compliance and debugging; not critical initially. |
+| Backup all data regularly. | N | Important for risk management; can be implemented later. |
+| Use AI to analyze data and detect anomalies. | M | Core differentiator; enables early health insights. |
+| Generate health insights/recommendations based on data. | M | Directly supports decision-making; central to system's purpose. |
+| Enable doctors to compare multiple patients' health trends. | N | Valuable for advanced functionality; not essential for MVP. |
+| Process and display new readings within seconds. | M | Ensures real-time monitoring performance. |
+| Visualize data via charts, graphs, and color indicators. | M | Supports easy understanding of health data; essential for dashboard. |
+| Filter, compare, and view data over multiple periods. | N | Enhances usability; not mandatory for intial release. |
+| Automatically update visualizations. | M | Required for real-time display accuracy. |
+| User-friendly interface, mobile, and desktop compatilble | M | Critical for accessibility and user adoption. |
+| Notify user and doctors immediately for abnormal readings. | M | critical safety feature; directly impacts health outcomes. |
+| Send alerts via email, SMS, or push notifications. | N | Adds convenience; initial version can focus on one channel. |
+| User HTTPS and encryption to secure data transimission. | M | Required for privacy, security, and compliance standards. |
+| Protect all data with secure login and encryption. | M | Core security requirement; mandatory for sensitive health data. |
+| Maintain system uptime of at least 99%. | N | Operational goal; important for reliability but can be optimized over time. |
+| Include help/tutorial sections. | S | Helpful for new users; not critical. |
+| Record user feedback for future development. | S | Useful for improvement; not necessary for launch. |
+| Allow authorized family or caregiver receive notifications. | N | Enhances usability for dependent users; secondary feature. |
+| Provide logs and notifications for system errors/device malfunctions. | N | Improves maintainability; not critical for core operation. |
+| Support scalability for additional sensors or users | N | Important for future growth; not essential for prototype phase. |
