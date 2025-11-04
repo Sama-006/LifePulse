@@ -157,7 +157,7 @@ The following requirements were collected through team brainstorming sessions an
     1. User Authentication and Role-Based Access
     2. IoT Data Collection and Synchronization
     3. AI-Based Health Analysis and Alert Generation
-  - These requirements were slected based on their criticla role in ensuring the system's functionality, reliability, and purpose.
+  - These requirements were selected based on their criticla role in ensuring the system's functionality, reliability, and purpose.
 
 <br>
 
