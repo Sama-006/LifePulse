@@ -16,13 +16,13 @@
 ## 2. Use Cases
 
 ### UC01 - Register/Login
-  -  Actors: Patient, Doctor
+  -  Actors: Patient, Doctor, Admin
   -  Goal: To securely create an account or access the system using valid credentials.
   -  Main Flow:
       1. The actor opens the system (web or mobile app).
       2. The actor selects “Register” or “Login.”
-      3. For registration, the actor provides name, email, password, and role (Patient or
-Doctor).
+      3. For registration, the actor provides name, email, password, and role (Patient,
+Doctor, or Admin).
       4. The system validates input and encrypts credentials.
       5. The account is created and stored securely in the database.
       6. For login, the actor enters credentials.
